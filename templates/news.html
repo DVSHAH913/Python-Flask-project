@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stock Price Prediction</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .navbar_img{
+            height:30px;
+            width:auto
+        }
+        .container-fluid .row .col2{
+            text-align:left
+        }
+        .container-fluid .row .col-8{
+            text-align:center;
+        }
+        #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+    </style>
+</head>
+<body>
+
+    <!--Title-->
+    <div class="container-fluid bg-light py-2">
+        <div class="row align-items-center">
+            <div class="col-2">
+                <img src="{{ url_for('static', filename='logo.png') }}" height="50"> <!--Company logo-->
+            </div>
+            <div class="col-8 text-center">
+                <h1 class="text-secondary m-0">VS Securities</h1>
+            </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="{{ url_for('home') }}">
+				<img src="{{ url_for('static', filename='logo.png') }}" alt="Company Logo" height="30" />
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('home') }}">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('prediction') }}">Prediction</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="{{ url_for('news') }}">News</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('learn') }}">Learn</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+					</li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" data-target="#ContactUs">Contact us</a>
+                      </li>                      
+				</ul>
+			</div>
+		</div>
+	</nav>
+    <div class="modal fade" id="ContactUs">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Contact Details</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Contact us at:VS Securities</p>
+                    <p>Email: VSSecurities2007@gmail.com</p>
+                    <p>Phone: 96662392392</p>
+                    <p>Address: Kaamdhenu Complex,Ambavadi,Ahmedabad</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="display-1 text-center">Todays's Stock news</h1>
+    <div id="accordian">
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link"
+                data-toggle="collapse"
+                href="#collapseOne">
+                Trading in times of correction: Top 10 ideas from experts for next 3-4 weeks:
+                </a>
+            </div>
+            <div id="collapseOne"
+            class="collapse"
+            data-parent="#accordian">
+            <div class="card-body">
+                <p>
+                    SUNIL SHANKAR MATKAR MARCH 13, 2023 / 11:33 AM IST
+                    
+                    The 17,300 level is expected to act as a crucial support, followed by the recent swing low of 17,250 and, if the said levels get broken, then there could be correction up to the 17,000 mark
+                    A spate of corrections sweeping through global markets after worries intensified in the US banking space weighed on the Indian equity markets on March 10, driving the Nifty50 down 1 percent on Friday as well as in the entire last week.
+                    The index managed to defend not only 17,300 but also the 17,400 levels, and closed at 17,413 on Friday, the lowest closing level since March 2. There was formation of a bearish candlestick pattern which somewhat resembles a bearish engulfing pattern on the weekly timeframe, indicating the possibility of weakness going ahead, though there was a hammer kind of pattern formation on the daily scale on Friday, which is generally a bullish reversal pattern.
+                    The 17,300 level is expected to act as a crucial support, followed by the recent swing low of 17,250 and if the said levels get broken, then there could be correction up to the 17,000 mark, whereas on the higher side, 17,600-17,700 could be critical hurdles for further up-move towards the psychological 18,000 mark, experts said.
+                    "Friday's low around 17,320 would be seen as an immediate support followed by sacrosanct support at February's swing low of 17,250. On the flip side, the bearish gap left around 17,570–17,600 should be considered an immediate hurdle," Sameet Chavan, Chief Analyst-Technical and Derivatives at Angel One, said.
+                    Instead of swaying on both sides of the trend, he advised that traders should ideally prefer staying light on positions and keep accumulating quality propositions in a staggered manner. 
+                </p>   
+            </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link"
+                data-toggle="collapse"
+                href="#collapseTwo">
+                HAL up 2% on Rs 667 crore-order win from defence ministry:
+                </a>
+            </div>
+            <div id="collapseTwo"
+            class="collapse"
+            data-parent="#accordian">
+            <div class="card-body">
+                <p>
+                    MONEYCONTROL NEWS MARCH 13, 2023 / 12:43 PM IST 
+                    
+                    On March 10, the defence ministry signed a Rs 667-crore contract for the procurement of six Domier-228 aircraft for the Indian Air Force from Hindustan Aeronautics Limited
+                    The share price of Hindustan Aeronautics Ltd (HAL) rose two percent on March 13 morning after the company announced winning a Rs 667 crore order from the defence ministry.
+                    At 10.33 am, shares of the government-owned defence major were trading 1.5 percent higher at Rs 2,891.20 on the BSE.
+                    “The Ministry of Defence, on March 10, 2023, signed a contract for procurement of six Domier-228 aircraft for the Indian Air Force (IAF) from Hindustan Aeronautics Limited (HAL) at a cost of Rs 667 crore,” the company said in a regulatory filing.
+                    Catch up on all LIVE stock market updates here.In the past few weeks, order inflow has been decent. Earlier this month, the Union Cabinet approved the acquisition of 70 HTT-40 basic trainer aircraft from HAL for Rs 6,828.36 crore. In February, the company signed a contract with the Argentinian Air Force for the supply of spares and engine repair of legacy two-tonne class helicopters.
+                </p>   
+            </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link"
+                data-toggle="collapse"
+                href="#collapseThree">
+                Hindustan Zinc, Vedanta shares gain despite delay in stake sale:
+                </a>
+            </div>
+            <div id="collapseThree"
+            class="collapse"
+            data-parent="#accordian">
+            <div class="card-body">
+                <p>
+                    Despite the news that the stake sale in Hindustan Zinc might be put on hold, shares of the metal company and Vedanta Resources, which owns more than 64 percent in the company, gained around 1 percent each on March 13.
+                    At 9:24am, shares of India’s largest integrated zinc producer were trading at Rs 305.6, up 0.3 percent, on the BSE. In the past one year and year-to-date, Hindustan Zinc’s stock has given a negative return of 3 and 5 percent. Vedanta shares were up 1.2 percent at Rs 283.25 on the BSE.
+                    The Indian government may put a plan to sell part of its stake in Hindustan Zinc on hold unless the company calls off the nearly $3-billion cash acquisition of two Vedanta Group subsidiaries, Reuters said, citing a senior government source.
+                    Catch up on all LIVE stock market updates here 
+                    The government is the largest minority shareholder in Hindustan Zinc with a 29.54 percent stake in the company, while Vedanta owns 64.9 percent. The London-headquartered company is keen to pick up 6 percent more in the zinc producer when the government dilutes its holding.
+                </p>   
+            </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link"
+                data-toggle="collapse"
+                href="#collapseFour">
+                Stock Market Today: Top 10 things to know before the market opens today:
+                </a>
+            </div>
+            <div id="collapseFour"
+            class="collapse"
+            data-parent="#accordian">
+            <div class="card-body">
+                <p>
+                    MARCH 13, 2023 / 07:53 AM IST
+                    
+                    The market is likely to open lower on Monday as trends in the SGX Nifty indicate a negative start for the broader index in India with a loss of 49 points.
+                    On Friday, the BSE Sensex corrected 671 points to 59,135, while the Nifty50 dropped 177 points to 17,413 and formed hammer kind of a candlestick pattern on the daily charts, which is generally a bullish reversal pattern, though for the week, with 1 percent loss, the index has formed a bearish engulfing sort of candle on the weekly scale.
+                    
+                    As per the pivot charts, the Nifty has support at 17,348, followed by 17,318 and 17,269. If the index moves up, the key resistance levels to watch out for are 17,445, followed by 17,475 and 17,523.
+                    Stay tuned to Moneycontrol to find out what happens in the currency and equity markets today. We have collated a list of important headlines across news platforms which could impact Indian as well as 
+                    international markets:
+                    
+                    US stocks closed sharply lower and Treasury yields extended their slide on Friday over fears of contagion in the financial sector and strong February employment data showing that the economy added more jobs than expected.
+                    All three major US stock indices ended the session down more than 1 percent, with the tech-laden Nasdaq suffering the largest percentage loss.
+                    The Dow Jones Industrial Average fell 345.22 points, or 1.07 percent, to 31,909.64, the S&P 500 lost 56.73 points, or 1.45 percent, to 3,861.59 and the Nasdaq Composite dropped 199.47 points, or 1.76 percent, to 11,138.89.
+                    
+                    Asian Markets 
+                    Asian markets were trading mostly in the red in the early morning trade today.
+                    Kospi in South Korea dropped 1 percent and Nikkei 225 in Japan fell 1.7 percent. Taiwan Weighted down 1 percent, However, Hang Seng index up 1 percent and Shanghai Composite gained 0.7 percent.
+
+                    SGX Nifty 
+                    Trends in the SGX Nifty indicate a flat to negative opening for the broader index in India with a loss of 49.50 points. The Nifty futures were trading around 17,388 levels on the Singaporean exchange.
+                    Yes Bank stocks may face mass selling as 3-year RBI-mandated lock-in ends today 
+                    Shares of Yes Bank may face selling pressure as the Reserve Bank-mandated three-year lock-in period for individual investors and exchange-traded funds is ending on Monday, according to analysts.
+                    The analysts expect distress on the bank counter on Monday as they expect investors, primarily nine banks led by State Bank, which picked up almost 49 percent of its stocks in March 2020 for Rs 10 per share at a premium of Rs 8 on the face value as part of the RBI bailout, are keen on making an exit.
+
+                    Stocks under F&O ban on NSE 
+                    The National Stock Exchange has retained Balrampur Chini Mills and GNFC on its F&O ban list for March 13. Securities banned under the F&O segment include companies where derivative contracts have crossed 95 percent of the market-wide position limit.
+                    Dollar slides as US intervenes on SVB collapse 
+                    The US dollar slid on Monday as authorities stepped in to cap the fallout from the sudden collapse of Silicon Valley Bank, with investors hoping the Federal Reserve will take a less aggressive monetary path.
+
+                    The US government announced several measures early on Monday, and said all SVB customers will have access to their deposits starting today. Officials also said depositors of New York's Signature Bank, which was closed Sunday by the New York state financial regulator, would also be made whole at no loss to the taxpayer.
+                    The dollar index, which measures the US currency against six rivals, fell 0.153 percent at 104.080. The Japanese yen strengthened 0.34 percent to 134.52 per dollar, the highest in a month as investors made a move to safe-haven Asian currencies.
+                </p>   
+            </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link"
+                data-toggle="collapse"
+                href="#collapseFive">
+                Hot Stocks | Here's why you should bet on Cipla, Cummins India for short term:
+                </a>
+            </div>
+            <div id="collapseFive"
+            class="collapse"
+            data-parent="#accordian">
+            <div class="card-body">
+                <p>
+                    SAMEET CHAVAN MARCH 13, 2023 / 07:07 AM IST
+                    
+                    The Nifty50 ended a tad above 17,400 with a weekly loss of a percent. The sell-off was triggered as the Nifty failed to cross a key technical level of 17,800, which is the 61.8 percent retracement of the recent down move. However, considering the recent positive development and head start to the week, we were of the view that Nifty would surpass the hurdle to reclaim 18,000. Now, with two back-to-back weak sessions, the momentum is again in favour of the bears.
+                    
+                    Despite this, we remain a bit hopeful and expect important levels to remain unbroken in the current week; especially after seeing prices showing resilience around the 200-SMA (simple moving average - 17,434) and forming a key technical pattern known as ‘Bullish Hammer’. It would however be very early to jump to any conclusion and considering the recent volatility, traders should ideally wait for the trend to establish.
+                    
+                    In such a scenario, Friday's low of around 17,320 would be seen as immediate support followed by sacrosanct support at February's swing low of 17,250. On the flip side, the bearish gap left around 17,570 – 17,600 should be considered an immediate hurdle.
+                    
+                    In our sense, instead of swaying on both sides of the trend, traders should ideally prefer staying light on positions and keep accumulating quality propositions in a staggered manner.
+                </p>   
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+
+    <footer class="bg-primary py-2 fixed bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col text-center">
+                    <small class="text-light">Copyright @DVS</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Show the button when the user scrolls down 20px from the top of the document
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll back to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+    </script>
+</body>
+</html>
